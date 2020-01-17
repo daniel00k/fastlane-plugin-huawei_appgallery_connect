@@ -17,7 +17,10 @@ module Fastlane
           end
 
           upload_app = Helper::HuaweiAppgalleryConnectHelper.upload_app(token, params[:client_id], params[:app_id], params[:apk_path])
-
+          puts "#{token}"
+          puts "#{params[:client_id]}"
+          puts "#{params[:app_id]}"
+          puts "#{params[:apk_path]}"
           if upload_app
             Helper::HuaweiAppgalleryConnectHelper.submit_app_for_review(token, params)
           end
