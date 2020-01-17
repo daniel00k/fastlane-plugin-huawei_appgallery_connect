@@ -5,6 +5,7 @@ module Fastlane
   module Actions
     class HuaweiAppgalleryConnectAction < Action
       def self.run(params)
+        puts "#{params.inspect}"
         token = Helper::HuaweiAppgalleryConnectHelper.get_token(params[:client_id], params[:client_secret])
 
         if token.nil?
@@ -21,7 +22,6 @@ module Fastlane
             Helper::HuaweiAppgalleryConnectHelper.submit_app_for_review(token, params)
           end
         end
-        # Helper::HuaweiAppgalleryConnectHelper.getAppInfo(token, params[:client_id], params[:app_id])
       end
 
       def self.description
