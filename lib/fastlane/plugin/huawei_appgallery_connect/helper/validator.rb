@@ -1,4 +1,7 @@
+require 'fastlane_core/ui/ui'
+
 module Validator
+    UI = FastlaneCore::UI unless Fastlane.const_defined?("UI")
     class ParamsValidator
         attr_accessor :params, :token
 
